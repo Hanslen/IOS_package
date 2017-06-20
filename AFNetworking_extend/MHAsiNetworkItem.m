@@ -2,8 +2,8 @@
 //  MHAsiNetworkItem.m
 //  MHProject
 //
-//  Created by MengHuan on 15/4/23.
-//  Copyright (c) 2015年 MengHuan. All rights reserved.
+//  Created by JiaheChen on 17/6/20.
+//  Copyright (c) 2017年 JiaheChen. All rights reserved.
 //
 
 #import "MHAsiNetworkItem.h"
@@ -68,8 +68,8 @@
         manager.securityPolicy.allowInvalidCertificates = YES;
         [manager.securityPolicy setValidatesDomainName:NO];
         manager.securityPolicy.pinnedCertificates = [NSSet setWithObjects:cerData, nil];
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", nil];
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/html",nil];
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
         //        AFJSONResponseSerializer *jsonSer =(AFJSONResponseSerializer*) manager.responseSerializer;
         //        jsonSer.removesKeysWithNullValues = YES;
